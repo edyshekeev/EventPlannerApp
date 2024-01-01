@@ -1,7 +1,6 @@
 package com.example.eventplannerapp.ui.controller;
 
 import com.example.eventplannerapp.exceptions.UserServiceExceptions;
-import com.example.eventplannerapp.io.entity.UserEntity;
 import com.example.eventplannerapp.service.EventService;
 import com.example.eventplannerapp.service.UserService;
 import com.example.eventplannerapp.shared.dto.EventDto;
@@ -45,7 +44,7 @@ public class UserController {
     }
 
     @PostMapping
-    public UserRest createUser(@RequestBody UserDetailsRequestModel userDetails) throws Exception {
+    public UserRest createUser(@RequestBody UserDetailsRequestModel userDetails){
         UserRest returnValue;
 
         if (userDetails.getUsername().isEmpty() || userDetails.getEmail().isEmpty() ||
@@ -158,7 +157,7 @@ public class UserController {
 
         boolean isVerified = userService.verifyEmailToken(token);
 
-        if (isVerified == true) {
+        if (isVerified) {
             returnValue.setOperationResult(RequestOperationStatus.SUCCESS.name());
         } else {
             returnValue.setOperationResult(RequestOperationStatus.ERROR.name());
