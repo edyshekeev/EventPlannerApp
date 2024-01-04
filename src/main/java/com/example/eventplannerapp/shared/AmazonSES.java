@@ -7,7 +7,7 @@ import com.amazonaws.services.simpleemail.model.*;
 import com.example.eventplannerapp.shared.dto.UserDto;
 
 public class AmazonSES {
-    final String FROM = "nurlanotek@gmail.com";
+    final String FROM = "erkinbek.diushekeev_2026@ucentralasia.org";
     final String SUBJECT = "One last step to complete your registration";
 
     final String HTMLBODY = "<h1>Please verify your email address</h1>"
